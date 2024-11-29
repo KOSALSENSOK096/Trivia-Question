@@ -16,11 +16,11 @@ async function askQuestion() {
     resetAnswers();
     resetAnswerDisplay();
     document.getElementById('hint').innerText = ''; // Clear hint
-    
+
     try {
         // Fetch trivia question from the API
         const trivia = await fetchTrivia();
-        
+
         // Display the question
         displayQuestion(trivia);
 
@@ -72,7 +72,7 @@ function displayAnswers(answers, correctAnswer) {
 // Function to check if the selected answer is correct
 function checkAnswer(correctAnswer, selectedElement, selectedAnswer) {
     const answerDisplay = document.getElementById('answer');
-    
+
     if (selectedAnswer === correctAnswer) {
         answerDisplay.innerText = `✔️ ចម្លើយត្រឹមត្រូវ: ${correctAnswer}`;
         answerDisplay.style.color = '#4CAF50'; // Green for correct
@@ -168,5 +168,5 @@ function resetAnswerDisplay() {
 // Handle error in fetching trivia
 function handleError(error) {
     console.error('Error fetching trivia:', error);
-    document.getElementById('question').innerText = 'មិនអាចទាញយកសំណួរ។ សូមព្យាយាមម្តងទៀត!';
+    document.getElementById('question').innerText = 'សូមព្យាយាមម្តងទៀត!';
 }
