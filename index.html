@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trivia Question App</title>
+    <!-- Link to Google Fonts for Khmer font -->
+    <link href="https://fonts.googleapis.com/css2?family=Khmer&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div id="app">
+        <h1>Trivia Question</h1>
+        <p id="question">Click the button to see a trivia question!</p>
+
+        <!-- Container for answers -->
+        <div id="answers"></div>
+
+        <!-- Display the result of selected answer -->
+        <p id="answer"></p>
+
+        <!-- Button to fetch a new question -->
+        <button onclick="askQuestion()">Get a Question</button>
+
+        <!-- Display the current score -->
+        <p id="score">Score: 0</p>
+
+        <!-- Timer countdown -->
+        <p id="timer">Time left: 30s</p>
+
+        <!-- Button to reset the timer -->
+        <button onclick="resetTimer()">Reset Timer</button>
+
+        <!-- High score section -->
+        <p id="highscore">High Score: 0</p>
+
+        <!-- Hint section -->
+        <p id="hint">Hint: Click "Get a Question" to start!</p>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>

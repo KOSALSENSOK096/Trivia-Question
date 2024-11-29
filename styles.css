@@ -1,0 +1,164 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Khmer', sans-serif;  /* Using Khmer Google font */
+    background: linear-gradient(135deg, #FFD700 0%, #ff7e5f 100%); /* Soft golden gradient */
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    font-size: 16px;
+}
+
+/* App Container */
+#app {
+    background-color: rgba(255, 255, 255, 0.9); /* semi-transparent white */
+    border-radius: 20px;
+    padding: 40px;
+    max-width: 600px;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.4s ease, opacity 0.3s ease;
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+}
+
+#app:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+h1 {
+    font-size: 3rem;
+    margin-bottom: 25px;
+    color: #ff7e5f; /* Warm color */
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    animation: slideIn 1s ease-out;
+}
+
+@keyframes slideIn {
+    from { transform: translateY(-50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+p#question {
+    font-size: 1.6rem;
+    margin: 20px 0;
+    color: #444;
+    line-height: 1.5;
+    letter-spacing: 0.5px;
+    animation: fadeInText 1s ease-in-out;
+}
+
+@keyframes fadeInText {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+p#answer {
+    font-size: 1.25rem;
+    margin: 20px 0;
+    font-weight: bold;
+    color: #f9a825;
+    display: none;
+    transition: opacity 0.3s ease;
+    animation: fadeInAnswer 1s ease-in-out;
+}
+
+@keyframes fadeInAnswer {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+#answers {
+    margin-top: 20px;
+}
+
+.answer-option {
+    background-color: #ffffff;
+    color: #333;
+    border: none;
+    border-radius: 8px;
+    padding: 15px;
+    margin: 10px;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    font-size: 1.2rem;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.answer-option:hover {
+    background-color: #f0f0f0;
+    transform: scale(1.05);
+}
+
+button {
+    background-color: #ff6f61;
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s ease, box-shadow 0.3s ease;
+    outline: none;
+}
+
+button:hover {
+    background-color: #e65a50;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+button:active {
+    transform: translateY(1px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+button:focus {
+    outline: none;
+    box-shadow: 0 0 10px rgba(255, 111, 97, 0.7);
+}
+
+/* Timer and Score Styles */
+#timer, #score, #highscore {
+    font-size: 1.5rem;
+    color: #333;
+    margin: 10px 0;
+}
+
+/* Hint Section */
+#hint {
+    font-size: 1rem;
+    color: #ff6347;
+    margin-top: 20px;
+    font-style: italic;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #app {
+        padding: 30px;
+    }
+
+    .answer-option {
+        padding: 12px;
+    }
+}
